@@ -23,7 +23,7 @@ server {
 负载均衡用于把请求分发给不同的服务器。  
 ### 实例
 目的是把 a.localhost.com 的请求转发给 192.168.2.101 192.168.2.102 192.168.2.103 服务器。  
-nginx 负载均衡模式  
+nginx 负载均衡常用模式  
 
 #### 1. 权重轮询  
 平均分发给服务器。如果带有 weight 参数，根据参数比例分发。默认 weight 为 1。
@@ -86,3 +86,6 @@ server {
 	}
 }
 ```
+### 参考
+https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/  
+https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/  
