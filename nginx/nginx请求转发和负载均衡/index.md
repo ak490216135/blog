@@ -8,9 +8,9 @@
 (如果是直接访问ip则修改 nginx/conf/nginx.conf)
 ```
 server {
-	listen        80;
+	listen 80;
 	server_name  a.localhost.com;
-    
+
     # http://a.localhost.com:80 => http://192.168.2.101:80
 	location / {
 		# 要指向的服务器地址 可以写端口号和请求路径
@@ -35,7 +35,7 @@ upstream vm_server1 {
 	server 192.168.2.103:80;
 }
 server {
-	listen        80;
+	listen 80;
 	server_name  a.localhost.com;
 	
 	location / {
@@ -50,13 +50,13 @@ server {
 upstream vm_server1 {
     # ip
     ip_hash;
-	# 分发给的服务器
+    # 分发给的服务器
 	server 192.168.2.101:80;
 	server 192.168.2.102:80;
 	server 192.168.2.103:80;
 }
 server {
-	listen        80;
+	listen 80;
 	server_name  a.localhost.com;
 	
 	location / {
@@ -78,7 +78,7 @@ upstream vm_server1 {
 	server 192.168.2.103:80;
 }
 server {
-	listen        80;
+	listen 80;
 	server_name  a.localhost.com;
 	
 	location / {
