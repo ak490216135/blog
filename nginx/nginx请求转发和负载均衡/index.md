@@ -11,7 +11,7 @@ server {
 	listen 80;
 	server_name  a.localhost.com;
 
-    # http://a.localhost.com:80 => http://192.168.2.101:80
+	# http://a.localhost.com:80 => http://192.168.2.101:80
 	location / {
 		# 要指向的服务器地址 可以写端口号和请求路径
 		proxy_pass http://192.168.2.101:80;
@@ -48,9 +48,9 @@ server {
 根据请求者 ip 分发，同 ip 一直都会访问同一个服务器。
 ```
 upstream vm_server1 {
-    # ip
-    ip_hash;
-    # 分发给的服务器
+	# ip
+	ip_hash;
+	# 分发给的服务器
 	server 192.168.2.101:80;
 	server 192.168.2.102:80;
 	server 192.168.2.103:80;
@@ -70,8 +70,8 @@ server {
 自动分发给负载最低的服务器
 ```
 upstream vm_server1 {
-    # 最少连接
-    least_conn;
+	# 最少连接
+	least_conn;
 	# 分发给的服务器
 	server 192.168.2.101:80;
 	server 192.168.2.102:80;
